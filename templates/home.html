@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div>
+    <h1 style="text-align: center">首页</h1>
+
+    <form action="/home/" method="post" style="text-align: center">
+        <input type="text" name="username"/><br/>
+        <input type="password" name="password"/><br/>
+        <input type="submit" value="提交"/>
+    </form>
+
+    <hr/>
+
+    <table border="1" style="text-align: center">
+        <thead>
+        <th>用户名</th>
+        <th>密码</th>
+        </thead>
+        <tbody>
+        {% for item in data %}
+            <tr>
+                <td>{{ item.user }}</td>
+                <td>{{ item.pwd }}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
